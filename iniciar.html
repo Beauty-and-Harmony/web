@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="estilooo.css" />
+    <title>Iniciar sesion y registrarse</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms">
+        <div class="form login">
+          <span class="title">Iniciar sesión</span>
+
+          <form action="../php/sesion.php" method="post" id="inicioform">
+            <div class="input-field">
+              <input type="text" placeholder="Ingrese su correo" id="usuario" name="core" required />
+              <i class="uil uil-envelope icon"></i>
+            </div>
+            <div class="input-field">
+              <input type="password" class="password" id="contras" placeholder="Ingrese su contraseña" name="contra" required />
+              <i class="uil uil-lock icon"></i>
+              <i class="uil uil-eye-slash showHidePw"></i>
+            </div>
+
+            <div class="checkbox-text">
+              <div class="checkbox-content">
+                <input type="checkbox" id="logCheck"  />
+                <label for="logCheck" class="text" >Recuerdame</label>
+              </div>
+
+
+            </div>
+
+            <div class="input-field button">
+              <input type="button" onclick="enviar()" value="Enviar" />
+            </div>
+          </form>
+
+          <div class="login-signup">
+            <span class="text"
+              >¿No eres un miembro?
+              <a href="#" class="text signup-link">Registrate ahora</a>
+            </span>
+          </div>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="form signup">
+          <span class="title">Registrarte</span>
+
+          <form action="../php/registrar.php" method="post">
+            <div class="input-field">
+              <input type="text" placeholder="Ingrese su nombre" required name="nam" />
+              <i class="uil uil-user"></i>
+            </div>
+            <div class="input-field">
+              <input type="text" placeholder="Ingrese su correo" required name="ema" />
+              <i class="uil uil-envelope icon"></i>
+            </div>
+            <div class="input-field">
+              <input type="password" class="password" placeholder="Cree una contraseña" required name="constra" />
+              <i class="uil uil-lock icon"></i>
+            </div>
+            <div class="input-field">
+              <input type="password" class="password" placeholder="Confirme su contraseña" required  />
+              <i class="uil uil-lock icon"></i>
+              <i class="uil uil-eye-slash showHidePw"></i>
+            </div>
+
+            <div class="checkbox-text">
+              <div class="checkbox-content">
+                <input type="checkbox" id="termCon" />
+                <label for="termCon" class="text">Acepto terminos y condiciones</label>
+              </div>
+            </div>
+
+            <div class="input-field button">
+              <input type="button" value="Registrar" />
+            </div>
+          </form>
+
+          <div class="login-signup">
+            <span class="text"
+              > Ya eres un miembro 
+              <a href="#" class="text login-link">Inicia sesión ahora</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <script>
+      (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+        
+          var forms = document.getElementsByClassName('needs-validation');
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+      </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
